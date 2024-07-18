@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Category, RegularPizza, SicilianPizza, Toppings, Sub, Pasta, Salad, DinnerPlatters, UserOrder, SavedCarts
+from .models import Restaurant, RegularPizza, SicilianPizza, Toppings, Sub, Pasta, Salad, DinnerPlatters, UserOrder, SavedCarts
 from tinymce.widgets import TinyMCE
 from django.db import models
 
-class CategoryAdmin(admin.ModelAdmin):
+class RestaurantAdmin(admin.ModelAdmin):
     formfield_overrides = {
             models.TextField: {'widget': TinyMCE()},
             }
@@ -19,7 +19,7 @@ class SicilianPizzaAdmin(admin.ModelAdmin):
             }
 
 
-admin.site.register(Category,CategoryAdmin)
+admin.site.register(Restaurant,RestaurantAdmin)
 admin.site.register(RegularPizza, RegularPizzaAdmin)
 admin.site.register(SicilianPizza, SicilianPizzaAdmin)
 admin.site.register(Toppings)

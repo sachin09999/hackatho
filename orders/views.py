@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
-from .models import Category, RegularPizza, SicilianPizza, Toppings, Sub, Pasta, Salad, DinnerPlatters, UserOrder, SavedCarts
+from .models import Restaurant, RegularPizza, SicilianPizza, Toppings, Sub, Pasta, Salad, DinnerPlatters, UserOrder, SavedCarts
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import logout, authenticate, login
@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 def index(request):
     if request.user.is_authenticated:
         #we are passing in the data from the category model
-        return render(request, "home.html", {"categories":Category.objects.all})
+        return render(request, "home.html", {"restaurants":Restaurant.objects.all})
     else:
         return redirect("orders:login")
 
