@@ -1,0 +1,26 @@
+{% extends 'header.html' %} 
+{% block content %}
+<link rel="stylesheet" href="/static/orders/login.css">
+<div class="wrapper">
+    <h1>Login</h1>     
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-box">
+                    {{form.as_p}}
+                </div>
+             <div class="for-reg">
+                <div class="rememeber-forgot">
+                    <label for=""><input type="checkbox" />Remember me</label>
+                    <a href="#">Forgot password ?</a>
+                </div>
+                    <button class="btn btn-success" type="submit">Login</button>
+                    <div class="register-link">
+                        <p>Don't have an account ? <a href="/register">register</a></p>
+                    </div>
+             </div>
+            </form>
+        </div> 
+</div>
+
+{% endblock %}

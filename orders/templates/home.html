@@ -1,0 +1,87 @@
+{% extends 'header.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        {% for cat in categories %}
+          <div class="card" style="width: 18rem; margin: 20px;"> <!-- The col-sm-4 stuff is that if its on a small screen it will take up a third of the widths-->
+            <img src={{cat.category_gif}} class="card-img-top" alt="gif for category item" style="width:100%;">
+            <div class="card-body">
+              <h5 class="card-title" >{{cat.category_title}}</h5>
+              <p class="card-text">{{cat.category_description|safe}}</p>
+              <a href="{{cat.category_title}}" class="btn btn-dark" >Order {{cat.category_title}}</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="dashboard">
+      <div class="dashboard-banner">
+        <img src="static/images-banner2.jpg">
+        <div class="banner-promo">
+          <h1><span>50% OFF</span><br>
+          Tasty Food <br>On Your Hand</h1>
+        </div>
+        <h3 class="dashboard-title">Recommended Food For You</h3>
+        <div class="dashboard-menu">
+          <a href="a">Favourites</a>
+          <a href="a">Best Seller</a>
+          <a href="a">Near Me</a>
+          <a href="a">Promotions</a>
+          <a href="a">Top Rated</a>
+          <a href="a">All</a>
+        </div>
+
+        <div class="dashboard-content">
+          <div class="dashboard-card">
+            <img class="card-image" src="static/img1.jpg">
+            <div class="card-detail">
+              <h4>Amazing Pizza<span>$30</span></h4>
+              <p>Lorem ipsum color sit</p>
+              <p class="card-time"><span class="fas fa-clock"></span>15-30 mins</p>
+          </div>
+          <div class="dashboard-card">
+            <img class="card-image" src="static/img2.jpeg">
+            <div class="card-detail">
+              <h4>Fresh Salad<span>$30</span></h4>
+              <p>Lorem ipsum color sit</p>
+              <p class="card-time"><span class="fas fa-clock"></span>15-30 mins</p>
+          </div>
+
+          <div class="dashboard-card">
+            <img class="card-image" src="static/img3.jpeg">
+            <div class="card-detail">
+              <h4>Sweet Pancake<span>$30</span></h4>
+              <p>Lorem ipsum color sit</p>
+              <p class="card-time"><span class="fas fa-clock"></span>15-30 mins</p>
+          </div>
+          <div class="dashboard-card">
+            <img class="card-image" src="static/img4.jpeg">
+            <div class="card-detail">
+              <h4>Well Done Chicken<span>$30</span></h4>
+              <p>Lorem ipsum color sit</p>
+              <p class="card-time"><span class="fas fa-clock"></span>15-30 mins</p>
+          </div>
+          <div class="dashboard-card">
+            <img class="card-image" src="static/img5.jpeg">
+            <div class="card-detail">
+              <h4>healthy Breakfast<span>$30</span></h4>
+              <p>Lorem ipsum color sit</p>
+              <p class="card-time"><span class="fas fa-clock"></span>15-30 mins</p>
+          </div>
+
+          <div class="dashboard-card">
+            <img class="card-image" src="static/img6.jpeg">
+            <div class="card-detail">
+              <h4>Fantastic Burger<span>$30</span></h4>
+              <p>Lorem ipsum color sit</p>
+              <p class="card-time"><span class="fas fa-clock"></span>15-30 mins</p>
+          </div>
+
+          </div>
+        </div>
+ 
+      </div>
+      
+
+{% endblock %}
