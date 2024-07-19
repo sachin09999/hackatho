@@ -320,3 +320,37 @@ transparent;
 .nav-buttons button {
     margin-left: 16px;
 }
+/* Sliding menu styles */
+.side-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: #f8f9fa; /* Adjust as needed */
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.side-menu-content {
+  padding: 20px;
+}
+
+/* Overlay background */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 900; /* Below side menu but above main content */
+  display: none; /* Initially hidden */
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+

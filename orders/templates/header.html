@@ -13,13 +13,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 
     {% load static %}
-    <link rel="stylesheet" href="static/main.js"> 
-    <link rel="stylesheet" href="static/header.css">
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="/static/main.js"> 
+    <link rel="stylesheet" href="/static/header.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/payment.css">
+
     <title>Foody</title>
   </head>
   <body>
-
+    
     <nav class="navbar navbar-expand-lg nav-border ">
       
       <a class="navbar-brand bold" href="#">Foody.</a>
@@ -43,6 +45,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/contact">Contact Us</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/payment">Pay</a>
+          </li>
         </ul>
         <div class="nav-buttons">
           <button class="btn-algolia-1"> <a href="/view-orders" >View Orders</a></button>
@@ -55,6 +60,7 @@
         </div>
         {% endif %}
       </div>
+     
     </nav>
 
     {% block content %}
@@ -66,6 +72,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <script src = "static/main.js"></script>
+    <script src = "/static/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Open menu button click event
+        const openMenuButtons = document.querySelectorAll('.open-menu');
+        const slideMenu = document.getElementById('slide-menu');
+        const overlay = document.querySelector('.overlay');
+      
+        openMenuButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            const target = this.getAttribute('data-target');
+            openSlideMenu(target);
+          });
+        });
+      
+        // Close menu button click event
+        const closeMenuButton = document.querySelector('.close-menu');
+        closeMenuButton.addEventListener('click', closeSlideMenu);
+      
+        // Function to open slide menu
+        function openSlideMenu(target) {
+          slideMenu.style.width = '300px'; // Adjust width as needed
+          overlay.style.display = 'block';
+        }
+      
+        // Function to close slide menu
+        function closeSlideMenu() {
+          slideMenu.style.width = '0';
+          overlay.style.display = 'none';
+        }
+      });
+      </script>
+      
   </body>
 </html>

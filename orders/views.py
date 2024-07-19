@@ -97,6 +97,12 @@ def hours(request):
         return render(request, "hours.html")
     else:
         return redirect("orders:login")
+    
+def payment(request):
+    if request.user.is_authenticated:
+        return render(request, "payment.html")
+    else:
+        return redirect("orders:login")
 
 def contact(request):
     if request.user.is_authenticated:
